@@ -1,0 +1,330 @@
+type Place {
+  id: ID!
+  name: String!
+  longitude: Float!
+  latitude: Float!
+  deal: String!
+  avg_rating: Float
+  num_rating: Int
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type Deal {
+  id: ID!
+  name: String!
+  photos: String!
+  description: String!
+  price: Float!
+  rating: Int
+  num_rating: Int
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+input ModelStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelBooleanInput {
+  ne: Boolean
+  eq: Boolean
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelSubscriptionStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  in: [String]
+  notIn: [String]
+}
+
+input ModelSubscriptionIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  in: [Int]
+  notIn: [Int]
+}
+
+input ModelSubscriptionFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  in: [Float]
+  notIn: [Float]
+}
+
+input ModelSubscriptionBooleanInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input ModelSubscriptionIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  in: [ID]
+  notIn: [ID]
+}
+
+enum ModelAttributeTypes {
+  binary
+  binarySet
+  bool
+  list
+  map
+  number
+  numberSet
+  string
+  stringSet
+  _null
+}
+
+input ModelSizeInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelPlaceConnection {
+  items: [Place]!
+  nextToken: String
+}
+
+input ModelPlaceFilterInput {
+  id: ModelIDInput
+  name: ModelStringInput
+  longitude: ModelFloatInput
+  latitude: ModelFloatInput
+  deal: ModelStringInput
+  avg_rating: ModelFloatInput
+  num_rating: ModelIntInput
+  and: [ModelPlaceFilterInput]
+  or: [ModelPlaceFilterInput]
+  not: ModelPlaceFilterInput
+}
+
+type Query {
+  getPlace(id: ID!): Place
+  listPlaces(filter: ModelPlaceFilterInput, limit: Int, nextToken: String): ModelPlaceConnection
+  getDeal(id: ID!): Deal
+  listDeals(filter: ModelDealFilterInput, limit: Int, nextToken: String): ModelDealConnection
+}
+
+input ModelPlaceConditionInput {
+  name: ModelStringInput
+  longitude: ModelFloatInput
+  latitude: ModelFloatInput
+  deal: ModelStringInput
+  avg_rating: ModelFloatInput
+  num_rating: ModelIntInput
+  and: [ModelPlaceConditionInput]
+  or: [ModelPlaceConditionInput]
+  not: ModelPlaceConditionInput
+}
+
+input CreatePlaceInput {
+  id: ID
+  name: String!
+  longitude: Float!
+  latitude: Float!
+  deal: String!
+  avg_rating: Float
+  num_rating: Int
+}
+
+input UpdatePlaceInput {
+  id: ID!
+  name: String
+  longitude: Float
+  latitude: Float
+  deal: String
+  avg_rating: Float
+  num_rating: Int
+}
+
+input DeletePlaceInput {
+  id: ID!
+}
+
+type Mutation {
+  createPlace(input: CreatePlaceInput!, condition: ModelPlaceConditionInput): Place
+  updatePlace(input: UpdatePlaceInput!, condition: ModelPlaceConditionInput): Place
+  deletePlace(input: DeletePlaceInput!, condition: ModelPlaceConditionInput): Place
+  createDeal(input: CreateDealInput!, condition: ModelDealConditionInput): Deal
+  updateDeal(input: UpdateDealInput!, condition: ModelDealConditionInput): Deal
+  deleteDeal(input: DeleteDealInput!, condition: ModelDealConditionInput): Deal
+}
+
+input ModelSubscriptionPlaceFilterInput {
+  id: ModelSubscriptionIDInput
+  name: ModelSubscriptionStringInput
+  longitude: ModelSubscriptionFloatInput
+  latitude: ModelSubscriptionFloatInput
+  deal: ModelSubscriptionStringInput
+  avg_rating: ModelSubscriptionFloatInput
+  num_rating: ModelSubscriptionIntInput
+  and: [ModelSubscriptionPlaceFilterInput]
+  or: [ModelSubscriptionPlaceFilterInput]
+}
+
+type Subscription {
+  onCreatePlace(filter: ModelSubscriptionPlaceFilterInput): Place @aws_subscribe(mutations: ["createPlace"])
+  onUpdatePlace(filter: ModelSubscriptionPlaceFilterInput): Place @aws_subscribe(mutations: ["updatePlace"])
+  onDeletePlace(filter: ModelSubscriptionPlaceFilterInput): Place @aws_subscribe(mutations: ["deletePlace"])
+  onCreateDeal(filter: ModelSubscriptionDealFilterInput): Deal @aws_subscribe(mutations: ["createDeal"])
+  onUpdateDeal(filter: ModelSubscriptionDealFilterInput): Deal @aws_subscribe(mutations: ["updateDeal"])
+  onDeleteDeal(filter: ModelSubscriptionDealFilterInput): Deal @aws_subscribe(mutations: ["deleteDeal"])
+}
+
+type ModelDealConnection {
+  items: [Deal]!
+  nextToken: String
+}
+
+input ModelDealFilterInput {
+  id: ModelIDInput
+  name: ModelStringInput
+  photos: ModelStringInput
+  description: ModelStringInput
+  price: ModelFloatInput
+  rating: ModelIntInput
+  num_rating: ModelIntInput
+  and: [ModelDealFilterInput]
+  or: [ModelDealFilterInput]
+  not: ModelDealFilterInput
+}
+
+input ModelDealConditionInput {
+  name: ModelStringInput
+  photos: ModelStringInput
+  description: ModelStringInput
+  price: ModelFloatInput
+  rating: ModelIntInput
+  num_rating: ModelIntInput
+  and: [ModelDealConditionInput]
+  or: [ModelDealConditionInput]
+  not: ModelDealConditionInput
+}
+
+input CreateDealInput {
+  id: ID
+  name: String!
+  photos: String!
+  description: String!
+  price: Float!
+  rating: Int
+  num_rating: Int
+}
+
+input UpdateDealInput {
+  id: ID!
+  name: String
+  photos: String
+  description: String
+  price: Float
+  rating: Int
+  num_rating: Int
+}
+
+input DeleteDealInput {
+  id: ID!
+}
+
+input ModelSubscriptionDealFilterInput {
+  id: ModelSubscriptionIDInput
+  name: ModelSubscriptionStringInput
+  photos: ModelSubscriptionStringInput
+  description: ModelSubscriptionStringInput
+  price: ModelSubscriptionFloatInput
+  rating: ModelSubscriptionIntInput
+  num_rating: ModelSubscriptionIntInput
+  and: [ModelSubscriptionDealFilterInput]
+  or: [ModelSubscriptionDealFilterInput]
+}

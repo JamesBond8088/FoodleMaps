@@ -1,0 +1,6 @@
+{
+  "AppSyncApiName": "foodlemap",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthModeLastUpdated": "2024-02-08T11:52:55.868Z"
+}

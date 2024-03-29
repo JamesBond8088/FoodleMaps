@@ -1,0 +1,8 @@
+{
+    "AppSyncApiName": "foodlemap",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false,
+    "AuthModeLastUpdated": "2024-02-08T11:52:55.868Z",
+    "S3DeploymentBucket": "amplify-foodlemaps-foodlemaps-161550-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/609611e8d46a74c90a871625a9d7189808c6174c"
+}

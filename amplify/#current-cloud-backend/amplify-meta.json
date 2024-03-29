@@ -1,0 +1,156 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-foodlemaps-foodlemaps-161550-authRole",
+      "UnauthRoleArn": "arn:aws:iam::197430572671:role/amplify-foodlemaps-foodlemaps-161550-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::197430572671:role/amplify-foodlemaps-foodlemaps-161550-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-foodlemaps-foodlemaps-161550-deployment",
+      "UnauthRoleName": "amplify-foodlemaps-foodlemaps-161550-unauthRole",
+      "StackName": "amplify-foodlemaps-foodlemaps-161550",
+      "StackId": "arn:aws:cloudformation:us-east-1:197430572671:stack/amplify-foodlemaps-foodlemaps-161550/222f6790-c641-11ee-8081-0e8bff65258b",
+      "AmplifyAppId": "d2cp2m33d7monx"
+    }
+  },
+  "api": {
+    "foodlemap": {
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [],
+          "defaultAuthentication": {
+            "apiKeyConfig": {
+              "apiKeyExpirationDate": "2024-02-15T11:52:52.874Z",
+              "apiKeyExpirationDays": 7,
+              "description": ""
+            },
+            "authenticationType": "API_KEY"
+          }
+        },
+        "GraphQLAPIIdOutput": "uqxz2jzslnc33crdr5xhxqd4ae",
+        "GraphQLAPIEndpointOutput": "https://rkvc45x7w5b2nkv5l3ytrnq5pi.appsync-api.us-east-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-6kj2obf4evcy5i6f2e5wcgks3a"
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync",
+      "lastPushTimeStamp": "2024-02-15T08:43:10.435Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-foodlemaps-foodlemaps-161550-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apifoodlemap"
+      },
+      "lastPushDirHash": "7xrepXtz+/KEUn0PzY9Gihd3SVE="
+    }
+  },
+  "auth": {
+    "foodlemaps": {
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito",
+      "serviceType": "managed",
+      "output": {
+        "UserPoolId": "us-east-1_vgqFGQv5V",
+        "AppClientIDWeb": "k9khne03upol3fnqcrdt7c61u",
+        "AppClientID": "2592bq2njlif2ua4t4sflh6gpa",
+        "IdentityPoolId": "us-east-1:d3891c9d-0ad2-4b05-aef2-4fdec417483a",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:197430572671:userpool/us-east-1_vgqFGQv5V",
+        "IdentityPoolName": "foodlemaps_identitypool_eba17083__foodlemaps",
+        "UserPoolName": "foodlemaps_userpool_eba17083"
+      },
+      "lastPushTimeStamp": "2024-02-15T08:43:10.435Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-foodlemaps-foodlemaps-161550-deployment/amplify-cfn-templates/auth/foodlemaps-cloudformation-template.json",
+        "logicalId": "authfoodlemaps"
+      },
+      "lastPushDirHash": "AoIexAs92YDY7DG7TQ6E7oJfpHU="
+    }
+  },
+  "function": {
+    "S3Triggerbfbac2d7": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::197430572671:role/S3Triggerbfbac2d7LambdaRolebfbac2d7-foodlemaps",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:lambda:us-east-1:197430572671:function:S3Triggerbfbac2d7-foodlemaps",
+        "Name": "S3Triggerbfbac2d7-foodlemaps",
+        "LambdaExecutionRole": "S3Triggerbfbac2d7LambdaRolebfbac2d7-foodlemaps"
+      },
+      "lastPushTimeStamp": "2024-02-15T08:43:10.435Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-foodlemaps-foodlemaps-161550-deployment/amplify-cfn-templates/function/S3Triggerbfbac2d7-cloudformation-template.json",
+        "logicalId": "functionS3Triggerbfbac2d7"
+      },
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-foodlemaps-foodlemaps-161550-deployment",
+        "s3Key": "amplify-builds/S3Triggerbfbac2d7-524c6764305568795254-build.zip"
+      },
+      "lastBuildTimeStamp": "2024-02-15T08:42:36.628Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2024-02-15T08:42:36.642Z",
+      "distZipFilename": "S3Triggerbfbac2d7-524c6764305568795254-build.zip",
+      "lastPushDirHash": "h6GkpqSIZPbFHNodgJ0WOzsOSXs="
+    },
+    "foodleFunction": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::197430572671:role/foodlemapsLambdaRoled8210c5d-foodlemaps",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:lambda:us-east-1:197430572671:function:foodleFunction-foodlemaps",
+        "Name": "foodleFunction-foodlemaps",
+        "LambdaExecutionRole": "foodlemapsLambdaRoled8210c5d-foodlemaps"
+      },
+      "lastPushTimeStamp": "2024-02-15T08:43:10.435Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-foodlemaps-foodlemaps-161550-deployment/amplify-cfn-templates/function/foodleFunction-cloudformation-template.json",
+        "logicalId": "functionfoodleFunction"
+      },
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-foodlemaps-foodlemaps-161550-deployment",
+        "s3Key": "amplify-builds/foodleFunction-42514f42764d34623550-build.zip"
+      },
+      "lastBuildTimeStamp": "2024-02-15T08:42:37.400Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2024-02-15T08:42:37.886Z",
+      "distZipFilename": "foodleFunction-42514f42764d34623550-build.zip",
+      "lastPushDirHash": "LMdMJ3aP8v5h4r3ThJoVyDGrdzY="
+    }
+  },
+  "storage": {
+    "s3foodle": {
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "S3",
+      "output": {
+        "BucketName": "foodlemaps6f66029150134e6d98beb722debb55bf161550-foodlemaps",
+        "Region": "us-east-1"
+      },
+      "lastPushTimeStamp": "2024-02-15T08:43:10.435Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-foodlemaps-foodlemaps-161550-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
+        "logicalId": "storages3foodle"
+      },
+      "lastPushDirHash": "XiQFfYEDciDkVOfx6hg9/CJKtvY="
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "dev": {
+    "configLevel": "project",
+    "useProfile": false,
+    "awsConfigFilePath": "/Users/jameszheng/.amplify/awscloudformation/Mnq140lCTa"
+  },
+  "foodledev": {
+    "configLevel": "project",
+    "useProfile": false,
+    "awsConfigFilePath": "/Users/jameszheng/.amplify/awscloudformation/MtH5cMD0PG"
+  },
+  "foodlemaps": {
+    "configLevel": "project",
+    "useProfile": false,
+    "awsConfigFilePath": "/Users/jameszheng/.amplify/awscloudformation/JBf73zSUkJ"
+  }
+}

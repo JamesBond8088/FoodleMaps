@@ -1,0 +1,79 @@
+{
+  "dev": {
+    "awscloudformation": {},
+    "categories": {
+      "function": {
+        "S3Triggerbfbac2d7": {},
+        "foodleFunction": {}
+      }
+    }
+  },
+  "foodledev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-foodlemaps-foodledev-160433-authRole",
+      "UnauthRoleArn": "arn:aws:iam::197430572671:role/amplify-foodlemaps-foodledev-160433-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::197430572671:role/amplify-foodlemaps-foodledev-160433-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-foodlemaps-foodledev-160433-deployment",
+      "UnauthRoleName": "amplify-foodlemaps-foodledev-160433-unauthRole",
+      "StackName": "amplify-foodlemaps-foodledev-160433",
+      "StackId": "arn:aws:cloudformation:us-east-1:197430572671:stack/amplify-foodlemaps-foodledev-160433/8e321430-c63f-11ee-964f-0e9ced82b18f",
+      "AmplifyAppId": "d2cp2m33d7monx"
+    },
+    "categories": {
+      "auth": {
+        "foodlemaps100f5c38": {}
+      },
+      "function": {
+        "S3Triggerbfbac2d7": {
+          "deploymentBucketName": "amplify-foodlemaps-foodledev-160433-deployment",
+          "s3Key": "amplify-builds/S3Triggerbfbac2d7-524c6764305568795254-build.zip"
+        },
+        "foodleFunction": {
+          "deploymentBucketName": "amplify-foodlemaps-foodledev-160433-deployment",
+          "s3Key": "amplify-builds/foodleFunction-42514f42764d34623550-build.zip"
+        }
+      },
+      "api": {
+        "foodlemaps": {}
+      },
+      "storage": {
+        "s3eb013512": {}
+      }
+    }
+  },
+  "foodlemaps": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-foodlemaps-foodlemaps-161550-authRole",
+      "UnauthRoleArn": "arn:aws:iam::197430572671:role/amplify-foodlemaps-foodlemaps-161550-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::197430572671:role/amplify-foodlemaps-foodlemaps-161550-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-foodlemaps-foodlemaps-161550-deployment",
+      "UnauthRoleName": "amplify-foodlemaps-foodlemaps-161550-unauthRole",
+      "StackName": "amplify-foodlemaps-foodlemaps-161550",
+      "StackId": "arn:aws:cloudformation:us-east-1:197430572671:stack/amplify-foodlemaps-foodlemaps-161550/222f6790-c641-11ee-8081-0e8bff65258b",
+      "AmplifyAppId": "d2cp2m33d7monx"
+    },
+    "categories": {
+      "function": {
+        "S3Triggerbfbac2d7": {
+          "deploymentBucketName": "amplify-foodlemaps-foodlemaps-161550-deployment",
+          "s3Key": "amplify-builds/S3Triggerbfbac2d7-524c6764305568795254-build.zip"
+        },
+        "foodleFunction": {
+          "deploymentBucketName": "amplify-foodlemaps-foodlemaps-161550-deployment",
+          "s3Key": "amplify-builds/foodleFunction-42514f42764d34623550-build.zip"
+        }
+      },
+      "api": {
+        "foodlemap": {}
+      },
+      "auth": {
+        "foodlemaps": {}
+      },
+      "storage": {
+        "s3foodle": {}
+      }
+    }
+  }
+}
